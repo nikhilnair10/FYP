@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.devMode" value="true" />
+   <package name="Register" extends="hibernate-default">
+
+      
+      <action name="adduser" class="Register.Signupmain" method="adduser">
+            <result name="success">/signin.jsp</result>
+            <result name="error">/signup.jsp</result>
+      </action>
+
+   </package>
+</struts>
