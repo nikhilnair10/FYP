@@ -7,8 +7,8 @@
 <id name="userid">
 			<generator class="increment"></generator>
 		</id>
-		<property name="uname"></property>
-		<property name="pwd"></property>
-		<property name="eid"></property>
+		<property name="uname" column="uname"/>
+		<property name="pwd" column="pwd" />
+		<property name="eid" column="eid" />
 </class>
 </hibernate-mapping>
