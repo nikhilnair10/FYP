@@ -20,11 +20,24 @@ public class Signupmain extends ActionSupport
 	 @TransactionTarget
 	 Transaction tx= null;
 	 Signup user ;
-	 public String adduser()
+	 
+	 public static int saveUser(Signup user)
+	 {
+		
+		
+		 Session session=new Configuration().configure("hibernate.cfg.xml").buildSessionFactory().openSession();
+		 Transaction t=session.beginTransaction();
+		 int i=(Integer)session.save(user);
+		 t.commit();
+		 session.close();
+		 return i;
+	 }
+}
+	 /*public String adduser(String uname, String pwd, String eid)
 	 {
 		 try
 		 {
-			 user = new Signup(user.getuname(),user.getpwd(),user.geteid());
+			 user = new Signup();
 	         factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 	         Session session = factory.openSession();
 	         String hql = "INSERT INTO details(username,password,emailid) value("+user.getuname()+","+user.getpwd()+","+user.geteid()+")";
@@ -54,5 +67,5 @@ public class Signupmain extends ActionSupport
 	         session.close(); 
 	     }
 		return null;
-	 }
-}
+	 }*/
+

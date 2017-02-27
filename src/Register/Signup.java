@@ -16,15 +16,7 @@ public class Signup
 	   @Column(name="eid")
 	   private String eid;
 	   
-	   
-	   
-	   public Signup(String uname,String pwd,String eid)
-	   {
-		   this.uname = uname;
-		   this.pwd = pwd;
-		   this.eid = eid;
-	   }
-	   
+	 
 	   public int getuserid() 
 	   {
 	    return id;
@@ -58,6 +50,15 @@ public class Signup
 	   public void seteid(String eid )
 	   {
 	      this.eid = eid;
+	   }
+	   
+	   public String execute()
+	   {
+		   int i=Signupmain.saveUser(this);
+		   if(i>0)
+			   return "success";
+		   else
+			   return "failure";
 	   }
 	
 }
