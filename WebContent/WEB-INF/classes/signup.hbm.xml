@@ -4,7 +4,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 <class name="Register.Signup" table="details">
-<id name="userid">
+<id name="id">
 			<generator class="increment"></generator>
 		</id>
 		<property name="uname" column="uname"/>

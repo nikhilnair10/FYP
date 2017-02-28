@@ -7,28 +7,40 @@ public class Signup
 {
 	   @Id
 	   @GeneratedValue
-	   @Column(name="userid")
-	   private int id;
+	   @Column(name="id")
+	   public int id;
 	   @Column(name="uname")
-	   private String uname;
+	   public String uname;
 	   @Column(name="pwd")
-	   private String pwd;
+	   public String pwd;
 	   @Column(name="eid")
-	   private String eid;
+	   public String eid;
 	   
+	   public Signup()
+	   {
+		   
+	   }
+	   public Signup(String uname,String pwd,String eid)
+	   {
+		   this.uname = uname;
+		   this.pwd = pwd;
+		   this.eid = eid;
+	   }
+
 	 
-	   public int getuserid() 
+	   public int getid() 
 	   {
 	    return id;
 	   }
 	   
-	   public void setuserid(int id) 
+	   public void setid(int id) 
 	   {
 	    this.id = id;
 	   }
 	   
 	   public String getuname() 
 	   {
+		
 	      return uname;
 	   }
 	   public void setuname(String uname) 
@@ -52,13 +64,27 @@ public class Signup
 	      this.eid = eid;
 	   }
 	   
+	   /*public String execute()
+	   {
+		   Signupmain suser = new Signupmain();
+		   int re = suser.saveUser(user);
+		   System.out.println(re);
+		  
+		   return "success";
+	   }*/
 	   public String execute()
 	   {
+		   
+		   System.out.println(this.uname);
+		   System.out.println(this.pwd);
+		   System.out.println(this.eid);
 		   int i=Signupmain.saveUser(this);
+		   
 		   if(i>0)
 			   return "success";
 		   else
 			   return "failure";
 	   }
+
 	
 }
