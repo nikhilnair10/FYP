@@ -8,13 +8,13 @@ public class Signup
 	   @Id
 	   @GeneratedValue
 	   @Column(name="id")
-	   public int id;
+	   private int id;
 	   @Column(name="uname")
-	   public String uname;
+	   private String uname;
 	   @Column(name="pwd")
-	   public String pwd;
+	   private String pwd;
 	   @Column(name="eid")
-	   public String eid;
+	   private String eid;
 	   
 	   public Signup()
 	   {
@@ -38,28 +38,28 @@ public class Signup
 	    this.id = id;
 	   }
 	   
-	   public String getuname() 
+	   public String getUname() 
 	   {
 		
 	      return uname;
 	   }
-	   public void setuname(String uname) 
+	   public void setUname(String uname) 
 	   {
 	      this.uname = uname;
 	   }
-	   public String getpwd() 
+	   public String getPwd() 
 	   {
 	      return pwd;
 	   }
-	   public void setpwd(String pwd) 
+	   public void setPwd(String pwd) 
 	   {
 	      this.pwd = pwd;
 	   }
-	   public String geteid() 
+	   public String getEid() 
 	   {
 	      return eid;
 	   }
-	   public void seteid(String eid )
+	   public void setEid(String eid )
 	   {
 	      this.eid = eid;
 	   }
@@ -71,7 +71,7 @@ public class Signup
 		   System.out.println(re);
 		  
 		   return "success";
-	   }*/
+	   }
 	   public String execute()
 	   {
 		   
@@ -84,7 +84,7 @@ public class Signup
 			   return "success";
 		   else
 			   return "failure";
-	   }
+	   }*/
 
 	
 }

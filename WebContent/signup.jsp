@@ -14,10 +14,10 @@
 <body>
 <div class="login-page">
   <div class="form">
-    <s:form  action="adduser"> 
-      <s:textfield type="text" name="uname"  placeholder="username"/>
-      <s:password type="password" name="pwd"  placeholder="password"/>
-      <s:textfield type="text" name="eid"  placeholder="Ex:abc@gmail.com"/>
+    <s:form  action="adduser" method="post"> 
+      <s:textfield type="text" name="user.uname"  placeholder="username"/>
+      <s:password type="password" name="user.pwd"  placeholder="password"/>
+      <s:textfield type="text" name="user.eid"  placeholder="Ex:abc@gmail.com"/>
       <s:submit name="CREATE" />
     </s:form>
      <p class="message">Already registered? <a href="signin.jsp">Sign In</a></p>

@@ -7,6 +7,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import Register.Signup;
+
+
 import com.googlecode.s2hibernate.struts2.plugin.annotations.SessionTarget;
 import com.googlecode.s2hibernate.struts2.plugin.annotations.TransactionTarget;
 import com.opensymphony.xwork2.ActionSupport;
@@ -19,20 +21,45 @@ public class Signupmain extends ActionSupport
 	 Session session;
 	 @TransactionTarget
 	 Transaction tx= null;
-	 Signup user ;
+	 private Signup user ;
 	 
-	 public static int saveUser(Signup user)
+	 public String execute()
 	 {
-		
-		
+		 System.out.println(user.getUname());
+		   System.out.println(user.getPwd());
+		   System.out.println(user.getEid());
 		 Session session=new Configuration().configure("hibernate.cfg.xml").buildSessionFactory().openSession();
 		 Transaction t=session.beginTransaction();
 		 int i=(Integer)session.save(user);
 		 t.commit();
 		 session.close();
-		 return i;
+		 return SUCCESS;
 	 }
+	 
+	 
+	 public Signup getUser() {
+			return user;
+		}
+
+		public void setUser(Signup user) {
+			this.user = user;
+		}
+		
+		
+		/*public static int saveUser(Signup user)
+		 {
+			
+			
+			 Session session=new Configuration().configure("hibernate.cfg.xml").buildSessionFactory().openSession();
+			 Transaction t=session.beginTransaction();
+			 int i=(Integer)session.save(user);
+			 t.commit();
+			 session.close();
+			 return i;
+		 }*/
 }
+
+
 	 /*public String adduser(String uname, String pwd, String eid)
 	 {
 		 try
